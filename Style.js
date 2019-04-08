@@ -24,7 +24,12 @@ var Styles = StyleSheet.create({
     buttonText: {
         fontSize: 22,
         fontWeight: 'bold',
-        color: 'white',
+        color: 'black',
+    },
+
+    inputRow: {
+        flex: 1,
+        flexDirection: 'row',
     },
   });
 

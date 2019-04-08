@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 
 //importing style component
-import Styles from '.Style/';
+import Styles from './Style';
 
 export default class Button extends Component{
 
