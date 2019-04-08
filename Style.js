@@ -14,6 +14,18 @@ var Styles = StyleSheet.create({
         flex: 8,
         backgroundColor: 'white',
     },
+    button: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderWidth: 0.5,
+        borderColor: 'black', 
+    },
+    buttonText: {
+        fontSize: 22,
+        fontWeight: 'bold',
+        color: 'white',
+    },
   });
 
 
