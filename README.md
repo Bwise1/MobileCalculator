@@ -1,5 +1,5 @@
 # MobileCalculator
-this Calculator is build with react-native 
+this is a react-native CALCULATOR project
 
 
 # How to run code on your pc terminal or cmd
