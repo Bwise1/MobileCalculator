@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { TouchableHighlight, View, Text } from 'react-native';
 
 //importing style component
 import Styles from './Style';
@@ -8,9 +8,9 @@ export default class Button extends Component{
 
     render() {
         return (
-            <View style={Styles.button}>
+            <TouchableHighlight style={[Styles.button, this.props.highlight ? Styles.inputButtonHighlighted : null]} underlayColor = "red" onPress={this.props.onPress}>
                 <Text style={Styles.buttonText}> {this.props.value}</Text>
-            </View>
+            </TouchableHighlight>   
         )
     }
 }

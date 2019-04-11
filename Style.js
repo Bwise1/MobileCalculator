@@ -8,6 +8,14 @@ var Styles = StyleSheet.create({
     resultContainer: {
         flex: 2,
         backgroundColor: 'red',
+        justifyContent: 'center',
+    },
+    resultText: {
+        color: 'white',
+        fontSize: 58,
+        fontWeight: 'bold',
+        textAlign: 'right',
+        padding: 20,
     },
 
     buttonContainer: {
@@ -31,6 +39,10 @@ var Styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
     },
+
+    inputButtonHighlighted: {
+        backgroundColor: 'black'
+    }
   });
 
 
