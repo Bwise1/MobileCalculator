@@ -7,11 +7,11 @@ var Styles = StyleSheet.create({
 
     resultContainer: {
         flex: 2,
-        backgroundColor: 'red',
+        backgroundColor: '#000000',
         justifyContent: 'center',
     },
     resultText: {
-        color: 'white',
+        color: '#FFFFFF',
         fontSize: 58,
         fontWeight: 'bold',
         textAlign: 'right',
@@ -20,28 +20,29 @@ var Styles = StyleSheet.create({
 
     buttonContainer: {
         flex: 8,
-        backgroundColor: 'white',
+        backgroundColor: '#FFFFFF',
     },
     button: {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
         borderWidth: 0.5,
-        borderColor: 'black', 
+        borderColor: '#000000', 
     },
     buttonText: {
         fontSize: 22,
         fontWeight: 'bold',
-        color: 'black',
+        color: '#000000',
     },
 
     inputRow: {
+
         flex: 1,
         flexDirection: 'row',
     },
 
     inputButtonHighlighted: {
-        backgroundColor: 'black'
+        backgroundColor: '#FFFFFF'   
     }
   });
 
