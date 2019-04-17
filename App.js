@@ -6,10 +6,10 @@ import Button from './Buttons';
 
 //buttons that will be displayed on the screen
 const inputButtons = [
-  [1, 2, 3, '/'],
-  [4, 5, 6, '*'],
-  [7, 8, 9, '-'],
-  [0, '.', '=', '+']
+  [9, 8, 7, '+'],
+  [6, 5, 4, '-'],
+  [3, 2, 1, '/'],  
+  [0, '.', '=', '*']
 ];
 
 
@@ -67,10 +67,10 @@ export default class App extends React.Component {
 
   _stringInput(str){
     switch(str){
-      case '/':
-      case '*':
       case '+':
       case '-':
+      case '/':
+      case '*':
         this.setState({
           selectedSymbol: str,
           previousInputValue: this.state.inputValue,
