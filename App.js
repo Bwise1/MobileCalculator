@@ -98,7 +98,7 @@ export default class App extends React.Component {
             });
             break;
         case 'Clear':
-            alert('Hello');
+          
           this.setState({inputValue: 0});
         break;
     }
