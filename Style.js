@@ -6,7 +6,7 @@ var Styles = StyleSheet.create({
     },
 
     resultContainer: {
-        flex: 2,
+        flex: 3,
         backgroundColor: '#000000',
         justifyContent: 'center',
     },
@@ -19,7 +19,7 @@ var Styles = StyleSheet.create({
     },
 
     buttonContainer: {
-        flex: 8,
+        flex: 7,
         backgroundColor: '#FFFFFF',
     },
     button: {
@@ -28,6 +28,7 @@ var Styles = StyleSheet.create({
         justifyContent: 'center',
         borderWidth: 0.5,
         borderColor: '#000000', 
+        borderRadius: 5,
     },
     buttonText: {
         fontSize: 22,
@@ -39,6 +40,12 @@ var Styles = StyleSheet.create({
 
         flex: 1,
         flexDirection: 'row',
+    },
+    delete: {
+        color: 'red',
+        fontSize: 23,
+        paddingVertical: 5,
+        paddingHorizontal: 10
     },
 
     inputButtonHighlighted: {

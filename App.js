@@ -6,6 +6,7 @@ import Button from './Buttons';
 
 //buttons that will be displayed on the screen
 const inputButtons = [
+  ['Del', 'Clear'],
   [9, 8, 7, '+'],
   [6, 5, 4, '-'],
   [3, 2, 1, '/'],  
@@ -20,6 +21,7 @@ export default class App extends React.Component {
     this.state = {
       previousInputValue: 0,
       inputValue: 0,
+      result: 0,
       selectedSymbol: null
     }
   }
@@ -29,7 +31,10 @@ export default class App extends React.Component {
         <View style={Styles.resultContainer}>
           <Text style={Styles.resultText}>{this.state.inputValue}</Text>
         </View>
-        <View style={Styles.buttonContainer}>{this._renderButtons()}</View>
+        <View style={Styles.buttonContainer}>
+         <Text style={Styles.delete}> Del</Text>
+          {this._renderButtons()}
+        </View>
       </View>
     );
   }
@@ -92,6 +97,10 @@ export default class App extends React.Component {
               selectedSymbol: null
             });
             break;
+        case 'Clear':
+            alert('Hello');
+          this.setState({inputValue: 0});
+        break;
     }
   }
 
