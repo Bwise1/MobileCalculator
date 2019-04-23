@@ -38,7 +38,6 @@ export default class App extends React.Component {
           <Text style={Styles.resultText}>{this.state.inputValue}</Text>
         </View>
         <View style={Styles.buttonContainer}>
-          <Text style={Styles.delete}> Del</Text>
           {this._renderButtons()}
         </View>
       </View>
