@@ -28,7 +28,7 @@ var Styles = StyleSheet.create({
         justifyContent: 'center',
         borderWidth: 0.5,
         borderColor: '#000000', 
-        borderRadius: 5,
+        borderRadius: 50,
     },
     buttonText: {
         fontSize: 22,
