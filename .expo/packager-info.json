@@ -1,9 +1,9 @@
 {
   "packagerPort": 19001,
-  "packagerPid": 1944,
+  "packagerPid": 7232,
   "expoServerNgrokUrl": "https://bk-uts.anonymous.mobilecalculator.exp.direct",
   "packagerNgrokUrl": "https://packager.bk-uts.anonymous.mobilecalculator.exp.direct",
-  "ngrokPid": 2696,
+  "ngrokPid": 7056,
   "devToolsPort": 19002,
   "expoServerPort": 19000,
   "webpackServerPort": null
