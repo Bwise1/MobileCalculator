@@ -97,13 +97,14 @@ export default class App extends React.Component {
       case '-':
       case '/':
       case '*':
+        if(selectedSymbol == null){
         this.setState({
           nextValue: true,
           numDots: 0,
           selectedSymbol: input,
           inputValue: (selectedSymbol !== null ? inputValue.substr(0, inputValue.length - 1) : inputValue) + input
         })
-
+       }
         break;
       case '.':
         let dot = inputValue.toString().slice(-1)

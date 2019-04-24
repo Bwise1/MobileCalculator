@@ -20,15 +20,17 @@ var Styles = StyleSheet.create({
 
     buttonContainer: {
         flex: 7,
-        backgroundColor: '#FFFFFF',
+        
+        
     },
     button: {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        borderWidth: 0.5,
+        borderWidth: 2,
         borderColor: '#000000', 
-        borderRadius: 5,
+        borderRadius: 50,
+        marginTop: 3,
     },
     buttonText: {
         fontSize: 22,
