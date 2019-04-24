@@ -97,7 +97,7 @@ export default class App extends React.Component {
       case '-':
       case '/':
       case '*':
-        if (selectedsymbol==null){
+        if (selectedSymbol==null){
         this.setState({
           nextValue: true,
           numDots: 0,
