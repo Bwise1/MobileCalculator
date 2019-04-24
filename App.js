@@ -34,12 +34,14 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={Styles.container}>
+      <LinearGradient colors={['#3498db', '#8e44ad']} >
         <View style={Styles.resultContainer}>
           <Text style={Styles.resultText}>{this.state.inputValue}</Text>
         </View>
         <View style={Styles.buttonContainer}>
           {this._renderButtons()}
         </View>
+        </LinearGradient>
       </View>
     );
   }
@@ -109,8 +111,10 @@ export default class App extends React.Component {
         break;
       case '.':
         let dot = inputValue.toString().slice(-1)
+        if (numDots == 0) {
         this.setState({
-          inputValue: dot != '.' ? inputValue + input : inputValue,  
+          inputValue: dot != '.' ? inputValue + input : inputValue, 
+          numDots: numDots + 1 
         })
         if (!nextValue) {
           this.setState({
@@ -121,7 +125,11 @@ export default class App extends React.Component {
             secondValue: secondValue + input
           })
         }
-        /*         if (numDots == 0) {
+      }else{
+        return;
+      }
+
+        /*         
                   this.setState({
                     inputValue: dot != '.' ? inputValue + input : inputValue,
                     numDots: numDots + 1
