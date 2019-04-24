@@ -1,9 +1,9 @@
 {
-  "packagerPort": 19001,
-  "packagerPid": 2404,
   "devToolsPort": 19002,
   "expoServerPort": 19000,
+  "packagerPort": 19001,
+  "packagerPid": 10932,
   "expoServerNgrokUrl": "https://jz-38c.anonymous.mobilecalculator.exp.direct",
   "packagerNgrokUrl": "https://packager.jz-38c.anonymous.mobilecalculator.exp.direct",
-  "ngrokPid": 1288
+  "ngrokPid": 476
 }
