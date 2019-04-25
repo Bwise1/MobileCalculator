@@ -22,12 +22,10 @@ export default class App extends React.Component {
       inputValue: '0',
       selectedSymbol: null,
       numDots: 0,
-     // result: '',
       firstValue: '',
       secondValue: '',
       nextValue: false,
-      //previousInputValue: 0,
-      //result: 0,
+ 
     }
     this.state = this.initialState
   }
@@ -40,6 +38,7 @@ export default class App extends React.Component {
         <View style={Styles.buttonContainer}>
           {this._renderButtons()}
         </View>
+
       </View>
     );
   }
@@ -97,38 +96,36 @@ export default class App extends React.Component {
       case '-':
       case '/':
       case '*':
-        if(selectedSymbol == null){
-        this.setState({
-          nextValue: true,
-          numDots: 0,
-          selectedSymbol: input,
-          inputValue: (selectedSymbol !== null ? inputValue.substr(0, inputValue.length - 1) : inputValue) + input
-        })
-       }
+        if (selectedSymbol == null) {
+          this.setState({
+            nextValue: true,
+            numDots: 0,
+            selectedSymbol: input,
+            inputValue: (selectedSymbol !== null ? inputValue.substr(0, inputValue.length - 1) : inputValue) + input
+          })
+        }
+
         break;
       case '.':
         let dot = inputValue.toString().slice(-1)
-        this.setState({
-          inputValue: dot != '.' ? inputValue + input : inputValue,  
-        })
-        if (!nextValue) {
+        if (numDots == 0) {
           this.setState({
-            firstValue: firstValue + input
+            inputValue: dot != '.' ? inputValue + input : inputValue,
+            numDots: numDots + 1
           })
+          if (!nextValue) {
+            this.setState({
+              firstValue: firstValue + input
+            })
+          } else {
+            this.setState({
+              secondValue: secondValue + input
+            })
+          }
         } else {
-          this.setState({
-            secondValue: secondValue + input
-          })
+          return
         }
-        /*         if (numDots == 0) {
-                  this.setState({
-                    inputValue: dot != '.' ? inputValue + input : inputValue,
-                    numDots: numDots + 1
-                  })
-                }
-                else {
-                  return;
-                } */
+
 
         break;
       case 'Clear':
@@ -146,11 +143,11 @@ export default class App extends React.Component {
       case '=':
         let result = eval(firstValue + selectedSymbol + secondValue);
         this.setState({
-          inputValue: result %1 === 0 ? result: result.toFixed(2),
-          firstValue: result%1 === 0 ? result: result.toFixed(2),
+          inputValue: result % 1 === 0 ? result : result.toFixed(2),
+          firstValue: result % 1 === 0 ? result : result.toFixed(2),
           secondValue: '',
           selectedSymbol: null,
-          nextValue: false 
+          nextValue: false
         })
 
 

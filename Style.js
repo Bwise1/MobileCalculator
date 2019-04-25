@@ -20,8 +20,7 @@ var Styles = StyleSheet.create({
 
     buttonContainer: {
         flex: 7,
-        
-        
+        backgroundColor: null
     },
     button: {
         flex: 1,
