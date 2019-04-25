@@ -25,6 +25,7 @@ export default class App extends React.Component {
       firstValue: '',
       secondValue: '',
       nextValue: false,
+      history: ''
     }
     this.state = this.initialState
   }
@@ -53,6 +54,7 @@ export default class App extends React.Component {
       
       <View style={Styles.container}>
           <View style={Styles.resultContainer}>
+          <Text style={Styles.resultText}>{this.state.history}</Text>
             <Text style={Styles.resultText}>{this.state.inputValue}</Text>
           </View>
           <View style={Styles.buttonContainer}>
@@ -86,7 +88,7 @@ export default class App extends React.Component {
   }
 
   _onInputButtonPressed = (input) => {
-    const { inputValue, selectedSymbol, numDots, firstValue, secondValue, nextValue } = this.state;
+    const { inputValue, selectedSymbol, history, numDots, firstValue, secondValue, nextValue } = this.state;
     switch (input) {
       case '0':
       case '1':
@@ -146,6 +148,13 @@ export default class App extends React.Component {
           return;
         }
         break;
+/*       case '-/+':
+        if( inputValue === '0'){
+          this.setState({
+            inputValue: -
+          })
+        } */
+        break;
 
       case 'Clear':
         this.setState(this.initialState);
@@ -162,14 +171,21 @@ export default class App extends React.Component {
         break;
 
       case '=':
+        try{
         let result = eval(firstValue + selectedSymbol + secondValue);
         this.setState({
+          history: firstValue + selectedSymbol + secondValue,
           inputValue: result % 1 === 0 ? result : result.toFixed(2),
           firstValue: result % 1 === 0 ? result : result.toFixed(2),
           secondValue: '',
           selectedSymbol: null,
           nextValue: false
         })
+      } catch(e){
+        Alert.alert(
+          'ERROR',
+          'Math Err',)
+      }
         break;
     }
   }

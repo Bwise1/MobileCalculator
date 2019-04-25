@@ -1,1 +1,9 @@
-{}
+{
+  "devToolsPort": 19002,
+  "expoServerPort": 19000,
+  "packagerPort": 19001,
+  "packagerPid": 10704,
+  "expoServerNgrokUrl": "https://5u-iws.anonymous.mobilecalculator.exp.direct",
+  "packagerNgrokUrl": "https://packager.5u-iws.anonymous.mobilecalculator.exp.direct",
+  "ngrokPid": 15404
+}
