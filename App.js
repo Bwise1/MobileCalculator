@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, AppRegistry } from 'react-native';
+import { StyleSheet, Text, View, StatusBar, BackHandler, Alert } from 'react-native';
 
 import Styles from './Style';
 import Button from './Buttons';
@@ -25,13 +25,38 @@ export default class App extends React.Component {
       firstValue: '',
       secondValue: '',
       nextValue: false,
+<<<<<<< HEAD
  
+=======
+>>>>>>> a9c966e7b92e4c36bb876141dc681d2d76ec94a5
     }
     this.state = this.initialState
   }
+  componentDidMount(){
+    BackHandler.addEventListener('hardwareBackPress', this.onBackPress);
+  }
+
+  onBackPress(){
+    Alert.alert('Confirm Exit', 'Do you want to quit the App?', [
+      {
+        text: 'Cancel',
+        onPress: () => console.log('Cancel Pressed')
+      }, {
+        text: 'OK',
+        onPress: () => BackHandler.exitApp()
+      }
+    ])
+    return true
+  }
+
+  componentWillUnmount(){
+    BackHandler.removeEventListener('hardwareBackPress', this.onBackPress)
+  }
   render() {
     return (
+      
       <View style={Styles.container}>
+<<<<<<< HEAD
         <View style={Styles.resultContainer}>
           <Text style={Styles.resultText}>{this.state.inputValue}</Text>
         </View>
@@ -39,6 +64,15 @@ export default class App extends React.Component {
           {this._renderButtons()}
         </View>
 
+=======
+          <View style={Styles.resultContainer}>
+            <Text style={Styles.resultText}>{this.state.inputValue}</Text>
+          </View>
+          <View style={Styles.buttonContainer}>
+            {this._renderButtons()}
+          </View>
+          <StatusBar barStyle="light-content"/>
+>>>>>>> a9c966e7b92e4c36bb876141dc681d2d76ec94a5
       </View>
     );
   }
@@ -123,14 +157,21 @@ export default class App extends React.Component {
             })
           }
         } else {
+<<<<<<< HEAD
           return
         }
 
 
+=======
+          return;
+        }
+>>>>>>> a9c966e7b92e4c36bb876141dc681d2d76ec94a5
         break;
+
       case 'Clear':
         this.setState(this.initialState);
         break
+
       case 'Del':
         let tempInputValue = inputValue.toString();
         let deletedString = tempInputValue.slice(0, tempInputValue.length - 1);
@@ -140,6 +181,7 @@ export default class App extends React.Component {
           firstValue: stringLength == 1 ? '0' : deletedString,
         })
         break;
+
       case '=':
         let result = eval(firstValue + selectedSymbol + secondValue);
         this.setState({
@@ -149,12 +191,8 @@ export default class App extends React.Component {
           selectedSymbol: null,
           nextValue: false
         })
-
-
-
         break;
     }
-
   }
 }
 

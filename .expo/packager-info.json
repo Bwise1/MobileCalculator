@@ -1,10 +1,1 @@
-{
-  "devToolsPort": 19002,
-  "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 16940,
-  "expoServerNgrokUrl": "https://tx-74b.anonymous.mobilecalculator.exp.direct",
-  "packagerNgrokUrl": "https://packager.tx-74b.anonymous.mobilecalculator.exp.direct",
-  "ngrokPid": 12012,
-  "webpackServerPort": null
-}
+{}
