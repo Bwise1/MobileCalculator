@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, AppRegistry } from 'react-native';
+import { StyleSheet, Text, View, StatusBar, BackHandler, Alert } from 'react-native';
 
 import Styles from './Style';
 import Button from './Buttons';
@@ -28,8 +28,29 @@ export default class App extends React.Component {
     }
     this.state = this.initialState
   }
+  componentDidMount(){
+    BackHandler.addEventListener('hardwareBackPress', this.onBackPress);
+  }
+
+  onBackPress(){
+    Alert.alert('Confirm Exit', 'Do you want to quit the App?', [
+      {
+        text: 'Cancel',
+        onPress: () => console.log('Cancel Pressed')
+      }, {
+        text: 'OK',
+        onPress: () => BackHandler.exitApp()
+      }
+    ])
+    return true
+  }
+
+  componentWillUnmount(){
+    BackHandler.removeEventListener('hardwareBackPress', this.onBackPress)
+  }
   render() {
     return (
+      
       <View style={Styles.container}>
           <View style={Styles.resultContainer}>
             <Text style={Styles.resultText}>{this.state.inputValue}</Text>
@@ -37,6 +58,7 @@ export default class App extends React.Component {
           <View style={Styles.buttonContainer}>
             {this._renderButtons()}
           </View>
+          <StatusBar barStyle="light-content"/>
       </View>
     );
   }

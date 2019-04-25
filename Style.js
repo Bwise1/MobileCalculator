@@ -26,9 +26,12 @@ var Styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        borderWidth: 0.5,
+        borderWidth: 5,
         borderColor: '#000000', 
         borderRadius: 50,
+        marginTop: 2,
+        marginBottom: 1
+
     },
     buttonText: {
         fontSize: 22,
